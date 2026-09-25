@@ -12,6 +12,17 @@ Everything, including the artwork and sounds, lives in this folder.
 Progress saves automatically in your browser (`localStorage`), so refreshing the page or coming back later picks up where you left off.
 To start over, open **⚙️ Settings → Reset Game**.
 
+### Share it with a link (free https hosting)
+
+The game is plain static files, so GitHub Pages can host it:
+
+1. On GitHub, open this repository's **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
+3. Pick the branch that has the game and the **/ (root)** folder, then click **Save**.
+4. After a minute or two the game is live at `https://<your-username>.github.io/<repository-name>/`.
+
+Anyone can open that link. After the first visit, the game also works **offline**: `sw.js` caches every file, and on phones it can be added to the home screen as an app.
+
 ### Controls
 
 | Action | Mouse / touch | Keyboard |

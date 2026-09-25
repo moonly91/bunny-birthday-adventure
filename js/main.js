@@ -127,6 +127,22 @@
     }, 1000);
   }
 
+  /** When served from a website (e.g. GitHub Pages), cache the game so the link also works offline
+      and can be installed to a phone's home screen. Opening index.html from disk skips this. */
+  function enableOfflineInstall() {
+    const web = location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+    if (!web) return;
+    try {
+      const link = document.createElement('link');
+      link.rel = 'manifest';
+      link.href = 'manifest.webmanifest';
+      document.head.appendChild(link);
+      if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+    } catch (e) {
+      /* sandboxed frames refuse service workers — the game still plays online */
+    }
+  }
+
   function boot() {
     BB.store.load();
     BB.ui.init();
@@ -172,6 +188,7 @@
     });
 
     startTimer();
+    enableOfflineInstall();
     M.showTitle();
     document.documentElement.classList.add('ready');
   }

@@ -1,0 +1,15 @@
+{
+  "name": "Bunny Birthday Adventure",
+  "short_name": "Bunny Party",
+  "description": "Help the bunnies prepare a surprise party for Lisa's 16th birthday.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffe6bf",
+  "theme_color": "#ffb35c",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
