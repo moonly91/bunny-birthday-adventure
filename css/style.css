@@ -219,7 +219,8 @@ kbd {
 /* ============================ SCREENS ============================ */
 #app {
   position: fixed;
-  inset: 0;
+  /* keep the game clear of phone notches and home bars (viewport-fit=cover) */
+  inset: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
 }
 .screen {
   position: absolute;
@@ -4440,7 +4441,7 @@ fieldset.set-row legend {
   #dock {
     width: auto;
     flex-direction: row;
-    padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+    padding: 6px 4px;
     gap: 8px;
   }
   .loc-badge {
